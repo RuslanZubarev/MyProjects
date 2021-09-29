@@ -1,5 +1,5 @@
 public class Printer {
-    private static String queue;
+    private static String queue = "";
     private int amountPage = 1;
     private int pendingPagesCount;
     private int totalAmountPage;
@@ -14,11 +14,13 @@ public class Printer {
     }
 
     public void append(String name, String text, int amountPage) {
+
         pendingPagesCount = pendingPagesCount + amountPage;
         queue = queue + "\n" + "Имя: " + name +
                 "\n" + "Текст: " + text +
                 "\n" + "Количество страниц: " + amountPage;
     }
+
 
     public void clear() {
         queue = "";
@@ -31,8 +33,8 @@ public class Printer {
             System.out.println("Очередь очищена");
         } else {
             System.out.println(queue);
-            System.out.println("Общее количество распечатанных страниц: " + getTotalAmountPage());
             System.out.println("Общее количество страниц: " + getPendingPagesCount());
+            System.out.println("Общее количество распечатанных страниц: " + getTotalAmountPage());
         }
     }
 
