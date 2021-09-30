@@ -1,4 +1,5 @@
 package ru.skillbox;
+import java.util.Scanner;
 
 public class Main {
 
