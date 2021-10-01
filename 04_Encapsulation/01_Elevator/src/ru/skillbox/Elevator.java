@@ -17,23 +17,19 @@ public class Elevator {
 
     public void moveDown() {
         currentFloor = currentFloor >= minFloor ? currentFloor - 1 : currentFloor;
-          System.out.println(" Опускаемся на этаж №: " + currentFloor);
+        System.out.println(" Опускаемся на этаж №: " + currentFloor);
     }
 
     public void moveUp() {
+
         currentFloor = currentFloor <= maxFloor ? currentFloor + 1 : currentFloor;
-           System.out.println(" Поднимаемся на этаж №: " + currentFloor);
+        System.out.println(" Поднимаемся на этаж №: " + currentFloor);
 
     }
 
     public void move(int floor) {
-/** Мысль по реализации этого метода № 1
- for (floor = 1; floor >= -3; floor++){
- System.out.println( "Этаж номер" + floor);
- }
- **/
 
-        if (floor >= minFloor && floor <= maxFloor) {
+        if (floor > minFloor || floor < maxFloor) {
             currentFloor = currentFloor + floor;
             currentFloor = currentFloor - floor;
             System.out.println("Выбран этаж № - " + floor);
@@ -41,15 +37,14 @@ public class Elevator {
             System.out.println("Этаж выбран неверно.");
         }
 
-    // Цикл отображается, но неверно, подскажите пожалуйста на что обратить внимание
-       if (floor < currentFloor) {
-            while (floor < currentFloor){
+        if (floor > currentFloor) {
+            while (currentFloor < floor && currentFloor < maxFloor) {
                 moveUp();
-                System.out.println(" Этаж №: " + currentFloor);
-                floor = floor + 1;
             }
+            System.out.println(" Этаж №: " + currentFloor);
+            floor = floor + 1;
         } else {
-            while (floor > currentFloor){
+            while (currentFloor > floor && currentFloor > minFloor) {
                 moveDown();
                 System.out.println(" Этаж №: " + currentFloor);
                 floor = floor - 1;
