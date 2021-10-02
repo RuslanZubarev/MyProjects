@@ -30,6 +30,9 @@ public class Elevator {
         if (floor < minFloor || floor > maxFloor) {
             System.out.println("Этаж выбран неверно.");
             return;
+        } else if (floor == currentFloor) {
+
+            System.out.println("Мы находимся на этом этаже");
         }
 
         while (currentFloor != floor) {
