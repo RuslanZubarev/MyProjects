@@ -27,28 +27,50 @@ public class Elevator {
 
     }
 
+    /**
+     * public void move(int floor) {
+     * <p>
+     * if (floor > minFloor || floor < maxFloor) {
+     * currentFloor = currentFloor + floor;
+     * currentFloor = currentFloor - floor;
+     * System.out.println("Выбран этаж № - " + floor);
+     * } else {
+     * System.out.println("Этаж выбран неверно.");
+     * }
+     * <p>
+     * if (floor > currentFloor) {
+     * while (currentFloor < floor && currentFloor < maxFloor) {
+     * moveUp();
+     * }
+     * System.out.println(" Этаж №: " + currentFloor);
+     * floor = floor + 1;
+     * } else {
+     * while (currentFloor > floor && currentFloor > minFloor) {
+     * moveDown();
+     * System.out.println(" Этаж №: " + currentFloor);
+     * floor = floor - 1;
+     * }
+     * }
+     * }
+     **/
     public void move(int floor) {
-
-        if (floor > minFloor || floor < maxFloor) {
-            currentFloor = currentFloor + floor;
-            currentFloor = currentFloor - floor;
-            System.out.println("Выбран этаж № - " + floor);
-        } else {
+        if (floor < minFloor || floor > maxFloor) {
             System.out.println("Этаж выбран неверно.");
+            return;
         }
 
-        if (floor > currentFloor) {
-            while (currentFloor < floor && currentFloor < maxFloor) {
+        while (currentFloor != floor) {
+            // Если текущий этаж выше заданного - ехать вниз (moveDown)
+            if (currentFloor > floor) {
+                moveDown();
+            }
+            // Если текущий этаэ ниже заданного - ехать вверх (moveUp)
+            if (currentFloor < floor) {
                 moveUp();
             }
-            System.out.println(" Этаж №: " + currentFloor);
-            floor = floor + 1;
-        } else {
-            while (currentFloor > floor && currentFloor > minFloor) {
-                moveDown();
-                System.out.println(" Этаж №: " + currentFloor);
-                floor = floor - 1;
-            }
+            // Вывести текущий этаж на консоль
+            System.out.println(currentFloor);
         }
     }
+
 }
