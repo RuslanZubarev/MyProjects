@@ -17,43 +17,34 @@ public class Elevator {
 
     public void moveDown() {
         currentFloor = currentFloor >= minFloor ? currentFloor - 1 : currentFloor;
-          System.out.println(" Опускаемся на этаж №: " + currentFloor);
+        System.out.println(" Опускаемся на этаж №: " + currentFloor);
     }
 
     public void moveUp() {
         currentFloor = currentFloor <= maxFloor ? currentFloor + 1 : currentFloor;
-           System.out.println(" Поднимаемся на этаж №: " + currentFloor);
+        System.out.println(" Поднимаемся на этаж №: " + currentFloor);
 
     }
 
     public void move(int floor) {
-/** Мысль по реализации этого метода № 1
- for (floor = 1; floor >= -3; floor++){
- System.out.println( "Этаж номер" + floor);
- }
- **/
-
-        if (floor >= minFloor && floor <= maxFloor) {
-            currentFloor = currentFloor + floor;
-            currentFloor = currentFloor - floor;
-            System.out.println("Выбран этаж № - " + floor);
-        } else {
+        if (floor < minFloor || floor > maxFloor) {
             System.out.println("Этаж выбран неверно.");
+            return;
         }
 
-    // Цикл отображается, но неверно, подскажите пожалуйста на что обратить внимание
-       if (floor < currentFloor) {
-            while (floor < currentFloor){
-                moveUp();
-                System.out.println(" Этаж №: " + currentFloor);
-                floor = floor + 1;
-            }
-        } else {
-            while (floor > currentFloor){
+        while (currentFloor != floor) {
+            // Если текущий этаж выше заданного - ехать вниз (moveDown)
+            if (currentFloor > floor) {
                 moveDown();
-                System.out.println(" Этаж №: " + currentFloor);
-                floor = floor - 1;
             }
+            // Если текущий этаэ ниже заданного - ехать вверх (moveUp)
+            else if (currentFloor < floor) {
+                moveUp();
+            }
+            // Вывести текущий этаж на консоль
+            System.out.println(currentFloor);
         }
     }
 }
+
+
