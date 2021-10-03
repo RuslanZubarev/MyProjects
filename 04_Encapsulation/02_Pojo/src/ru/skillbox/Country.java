@@ -40,7 +40,7 @@ public class Country {
         this.nameOfCapital = nameOfCapital;
     }
 
-    public boolean isExitToTheBeach() {
+    public boolean getExitToTheBeach() {
         return exitToTheBeach;
     }
 

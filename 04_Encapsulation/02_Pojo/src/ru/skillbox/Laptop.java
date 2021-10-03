@@ -35,7 +35,7 @@ public class Laptop {
         this.weight = weight;
     }
 
-    public boolean isAbilityToUpgrade() {
+    public boolean abilityToUpgrade() {
         return abilityToUpgrade;
     }
 
