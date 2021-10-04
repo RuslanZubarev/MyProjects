@@ -9,6 +9,7 @@ public class Elevator {
     public Elevator(int minFloor, int maxFloor) {
         this.minFloor = minFloor;
         this.maxFloor = maxFloor;
+        this.currentFloor = currentFloor;
     }
 
     public int getCurrentFloor() {
@@ -17,12 +18,10 @@ public class Elevator {
 
     public void moveDown() {
         currentFloor = currentFloor >= minFloor ? currentFloor - 1 : currentFloor;
-        System.out.println(" Опускаемся на этаж №: " + currentFloor);
     }
 
     public void moveUp() {
         currentFloor = currentFloor <= maxFloor ? currentFloor + 1 : currentFloor;
-        System.out.println(" Поднимаемся на этаж №: " + currentFloor);
 
     }
 
