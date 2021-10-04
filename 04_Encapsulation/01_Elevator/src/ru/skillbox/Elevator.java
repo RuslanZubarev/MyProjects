@@ -39,7 +39,7 @@ public class Elevator {
             if (currentFloor > floor) {
                 moveDown();
             }
-            // Если текущий этаэ ниже заданного - ехать вверх (moveUp)
+            // Если текущий этаж ниже заданного - ехать вверх (moveUp)
             else if (currentFloor < floor) {
                 moveUp();
             }
