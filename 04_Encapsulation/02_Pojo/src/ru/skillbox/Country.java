@@ -7,6 +7,10 @@ public class Country {
     private int nameOfCapital;
     private boolean exitToTheBeach;
 
+    public Country(String nameOfCountry) {
+        this.nameOfCountry = nameOfCountry;
+    }
+
     public void setNameOfCountry(String nameOfCountry) {
         this.nameOfCountry = nameOfCountry;
     }
@@ -40,17 +44,12 @@ public class Country {
         this.nameOfCapital = nameOfCapital;
     }
 
-    public boolean getExitToTheBeach() {
+    public boolean isExitToTheBeach() {
         return exitToTheBeach;
     }
 
     public void setExitToTheBeach(boolean exitToTheBeach) {
         this.exitToTheBeach = exitToTheBeach;
     }
-
-    public Country(String nameOfCountry) {
-        this.nameOfCountry = nameOfCountry;
-    }
-
-
 }
+
