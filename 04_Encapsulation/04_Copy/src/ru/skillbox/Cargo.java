@@ -1,3 +1,5 @@
+package ru.skillbox;
+
 public class Cargo {
     private final Dimensions dimensions;
     private final int weight;
@@ -50,5 +52,8 @@ public class Cargo {
     public boolean isFragile() {
         return isFragile;
     }
+    public String toString(){
+        return dimensions + " - " + weight + " - " + deliveryAddress + " - " + canOverturn + " - "
+                + regNumber + " - " + isFragile;
+    }
 }
-

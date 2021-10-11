@@ -1,3 +1,5 @@
+package ru.skillbox;
+
 public class Dimensions {
     private final int width;
     private final int hight;
@@ -25,3 +27,4 @@ public class Dimensions {
         int volumeOfCargo = width * hight * length;
     }
 }
+
