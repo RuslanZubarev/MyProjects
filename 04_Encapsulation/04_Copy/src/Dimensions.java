@@ -1,12 +1,12 @@
 public class Dimensions {
     private final int width;
     private final int hight;
-    private final int lenght;
+    private final int length;
 
-    public Dimensions(int width, int hight, int lenght) {
+    public Dimensions(int width, int hight, int length) {
         this.width = width;
         this.hight = hight;
-        this.lenght = lenght;
+        this.length = length;
     }
 
     public int getWidth() {
@@ -17,11 +17,11 @@ public class Dimensions {
         return hight;
     }
 
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
     public void calculateVolumeOfCargo() {
-        int volumeOfCargo = width * hight * lenght;
+        int volumeOfCargo = width * hight * length;
     }
 }

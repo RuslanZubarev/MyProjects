@@ -1,15 +1,15 @@
 public class Cargo {
     private final Dimensions dimensions;
     private final int weight;
-    private final String deliveryAdress;
+    private final String deliveryAddress;
     private final boolean canOverturn;
     private final String regNumber;
     private final boolean isFragile;
 
-    public Cargo(Dimensions dimensions, int weight, String deliveryAdress, boolean canOverturn, String regNumber, boolean isFragile) {
+    public Cargo(Dimensions dimensions, int weight, String deliveryAddress, boolean canOverturn, String regNumber, boolean isFragile) {
         this.dimensions = dimensions;
         this.weight = weight;
-        this.deliveryAdress = deliveryAdress;
+        this.deliveryAddress = deliveryAddress;
         this.canOverturn = canOverturn;
         this.regNumber = regNumber;
         this.isFragile = isFragile;
@@ -20,7 +20,7 @@ public class Cargo {
     }
 
     public Cargo setDimensions(Dimensions dimensions) {
-        return new Cargo(dimensions, weight, deliveryAdress, canOverturn, regNumber, isFragile);
+        return new Cargo(dimensions, weight, deliveryAddress, canOverturn, regNumber, isFragile);
     }
 
     public int getWeight() {
@@ -28,15 +28,15 @@ public class Cargo {
     }
 
     public Cargo setWeight(int weight) {
-        return new Cargo(dimensions, weight, deliveryAdress, canOverturn, regNumber, isFragile);
+        return new Cargo(dimensions, weight, deliveryAddress, canOverturn, regNumber, isFragile);
     }
 
-    public String getDeliveryAdress() {
-        return deliveryAdress;
+    public String getDeliveryAddress() {
+        return deliveryAddress;
     }
 
-    public Cargo setDeliveryAdress(String deliveryAdress) {
-        return new Cargo(dimensions, weight, deliveryAdress, canOverturn, regNumber, isFragile);
+    public Cargo setDeliveryAddress(String deliveryAddress) {
+        return new Cargo(dimensions, weight, deliveryAddress, canOverturn, regNumber, isFragile);
     }
 
     public boolean isCanOverturn() {
