@@ -52,7 +52,8 @@ public class Cargo {
     public boolean isFragile() {
         return isFragile;
     }
-    public String toString(){
+
+    public String toString() {
         return dimensions + " - " + weight + " - " + deliveryAddress + " - " + canOverturn + " - "
                 + regNumber + " - " + isFragile;
     }

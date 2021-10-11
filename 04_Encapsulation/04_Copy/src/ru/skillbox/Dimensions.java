@@ -26,5 +26,11 @@ public class Dimensions {
     public void calculateVolumeOfCargo() {
         int volumeOfCargo = width * hight * length;
     }
+
+    public String toSting() {
+        return "Ширина:" + width + "\n" +
+                "Высота:" + hight + "\n" +
+                "Длинна:" + length;
+    }
 }
 
