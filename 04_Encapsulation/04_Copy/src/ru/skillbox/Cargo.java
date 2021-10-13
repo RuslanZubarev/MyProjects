@@ -54,7 +54,11 @@ public class Cargo {
     }
 
     public String toString() {
-        return dimensions + " - " + weight + " - " + deliveryAddress + " - " + canOverturn + " - "
-                + regNumber + " - " + isFragile;
+        return "Габариты - " + dimensions + "\n" +
+                "Вес - " + weight + "\n" +
+                "Адрес доставки - " + deliveryAddress + "\n" +
+                "Можно ли переворачивать? - " + canOverturn + "\n" +
+                "Регистрационный номере - " + regNumber + "\n" +
+                "Хрупкое? - " + isFragile;
     }
 }

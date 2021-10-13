@@ -10,6 +10,8 @@ public class Main {
         dimensions.setLenght(1);
         Cargo cargo = new Cargo(dimensions,20, "address", true, "aaa001", false);
         //some code
+        cargo.setDeliveryAddress("address2");
+        cargo.setWeight(45);
         dimensions.setLenght(2);
         dimensions.setHight(2);
         dimensions.setWidth(2);
