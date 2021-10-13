@@ -15,12 +15,24 @@ public class Dimensions {
         return width;
     }
 
+    public Dimensions setWidth(int width){
+        return new Dimensions(width, hight, length);
+    }
+
     public int getHight() {
         return hight;
     }
 
+    public Dimensions setHight(int hight){
+        return new Dimensions(width, hight, length);
+    }
+
     public int getLength() {
         return length;
+    }
+
+    public Dimensions setLenght(int length){
+        return new Dimensions(width, hight, length);
     }
 
     public void calculateVolumeOfCargo() {
