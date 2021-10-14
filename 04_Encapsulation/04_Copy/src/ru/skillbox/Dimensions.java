@@ -15,7 +15,7 @@ public class Dimensions {
         return width;
     }
 
-    public Dimensions setWidth(int width){
+    public Dimensions setWidth(int width) {
         return new Dimensions(width, hight, length);
     }
 
@@ -23,7 +23,7 @@ public class Dimensions {
         return hight;
     }
 
-    public Dimensions setHight(int hight){
+    public Dimensions setHight(int hight) {
         return new Dimensions(width, hight, length);
     }
 
@@ -31,12 +31,13 @@ public class Dimensions {
         return length;
     }
 
-    public Dimensions setLenght(int length){
+    public Dimensions setLenght(int length) {
         return new Dimensions(width, hight, length);
     }
 
-    public void calculateVolumeOfCargo() {
-        int volumeOfCargo = width * hight * length;
+
+    public int calculateVolume() {
+        return  width * hight * length;
     }
 
     public String toSting() {
