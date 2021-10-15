@@ -54,7 +54,7 @@ public class Cargo {
     }
 
     public String toString() {
-        return "Габариты - " + dimensions + "\n" +
+        return "Габариты: " + "\n" + dimensions + "\n" +
                 "Вес - " + weight + "\n" +
                 "Адрес доставки - " + deliveryAddress + "\n" +
                 "Можно ли переворачивать? - " + canOverturn + "\n" +

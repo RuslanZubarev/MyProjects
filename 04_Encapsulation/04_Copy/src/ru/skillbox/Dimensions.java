@@ -19,7 +19,7 @@ public class Dimensions {
         return new Dimensions(width, hight, length);
     }
 
-    public int getHight() {
+    public int getHight(int i) {
         return hight;
     }
 
@@ -40,7 +40,7 @@ public class Dimensions {
         return  width * hight * length;
     }
 
-    public String toSting() {
+    public String toString() {
         return "Ширина:" + width + "\n" +
                 "Высота:" + hight + "\n" +
                 "Длинна:" + length;
