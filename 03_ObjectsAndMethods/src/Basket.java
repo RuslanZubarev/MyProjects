@@ -1,6 +1,6 @@
 public class Basket {
     private double totalWeight = 0;
-    private static String items = "";
+    private String items = "";
     private int totalPrice = 0;
     private int limit;
 
