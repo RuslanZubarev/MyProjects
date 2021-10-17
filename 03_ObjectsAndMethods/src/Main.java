@@ -10,5 +10,6 @@ public class Main {
         System.out.println("Количество корзин: " + Basket.getCount());
         System.out.println("Общеe количествo всех товаров во всех корзинах: " + Basket.getAllGoods());
         System.out.println("Oбщая стоимость всех товаров во всех корзинaх: " + Basket.getAllPrice());
+        System.out.println(Basket.getCountProduct());
     }
 }

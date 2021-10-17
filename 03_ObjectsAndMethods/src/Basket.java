@@ -12,8 +12,8 @@ public class Basket {
     public Basket() {
         increaseCount(1);
         increaseAllGoods(1);
-     //   increaseAllPrice(1);
-        //   increaseCountProduct(1);
+       // increaseAllPrice(1);
+        increaseCountProduct(1);
         items = "Список товаров:";
         this.limit = 10000;
         this.totalWeight = 0.0;
@@ -90,8 +90,8 @@ public class Basket {
                 + price + " - " + weight + " Грамм ";
         totalPrice = totalPrice + countProduct * price;
         totalWeight = totalWeight + weight;
-        allGoods = allGoods + countProduct;
-        allPrice = allPrice + totalPrice;
+        allGoods = allGoods * countProduct;
+        allPrice = allPrice + totalPrice * count;
 
     }
 
