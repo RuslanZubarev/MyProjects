@@ -13,7 +13,7 @@ public class Basket {
         increaseCount(1);
         increaseAllGoods(1);
      //   increaseAllPrice(1);
-     //   increaseCountProduct(1);
+        //   increaseCountProduct(1);
         items = "Список товаров:";
         this.limit = 10000;
         this.totalWeight = 0.0;
@@ -90,8 +90,8 @@ public class Basket {
                 + price + " - " + weight + " Грамм ";
         totalPrice = totalPrice + countProduct * price;
         totalWeight = totalWeight + weight;
-        allGoods = allGoods * countProduct;
-     //   allPrice = totalPrice * count;
+        allGoods = allGoods + countProduct;
+        allPrice = allPrice + totalPrice;
 
     }
 
@@ -99,6 +99,8 @@ public class Basket {
         items = "";
         totalPrice = 0;
         totalWeight = 0;
+        allPrice = 0;
+        allGoods = 0;
     }
 
     public int getTotalPrice() {
