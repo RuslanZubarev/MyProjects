@@ -1,18 +1,21 @@
 public class Basket {
     private double totalWeight = 0;
     private String items = "";
-    private int totalPrice = 0;
+    private int totalPrice = 0; // цена всех товаров в одной корзине.
     private int limit;
 
-    private static int count = 0;
-    public static int allGoods = 0; // общеe количествo всех товаров во всех корзинах
-
+    private static int count = 0; // общее количество корзин.
+    public static int allGoods = 0; // общеe количествo всех товаров во всех корзинах.
+    public static int allPrice = 0; // общая стоимость всех товаров во всех корзинaх.
+    public static int countProduct = 0; // количество товаров в одной корзине.
 
     public Basket() {
         increaseCount(1);
         increaseAllGoods(1);
+     //   increaseAllPrice(1);
+     //   increaseCountProduct(1);
         items = "Список товаров:";
-        this.limit = 1000000;
+        this.limit = 10000;
         this.totalWeight = 0.0;
     }
 
@@ -21,55 +24,74 @@ public class Basket {
         this.limit = limit;
     }
 
-    public Basket(String items, int totalPrice) {
+    public Basket(String items, int limit) {
         this();
         this.items = this.items + items;
-        this.totalPrice = totalPrice;
+        this.limit = limit;
     }
 
     public static int getCount() {
         return count;
     }
 
-    public static int getAllGoods(){
+    public static int getAllGoods() {
         return allGoods;
     }
+
+    public static int getAllPrice() {
+        return allPrice;
+    }
+
+    public static int getCountProduct() {
+        return countProduct;
+    }
+
+    public static void increaseCountProduct(int countProduct) {
+        Basket.countProduct = Basket.count + Basket.countProduct;
+    }
+
 
     public static void increaseCount(int count) {
         Basket.count = Basket.count + count;
     }
-    public static void increaseAllGoods(int allGoods){
+
+    public static void increaseAllGoods(int allGoods) {
         Basket.allGoods = Basket.allGoods + allGoods;
+    }
+
+    public static void increaseAllPrice(int allPrice) {
+        Basket.allPrice = Basket.allPrice + allPrice;
     }
 
     public void add(String name, int price) {
         add(name, price, 1);
     }
 
-    public void add(String name, int price, int count) {
+    public void add(String name, int price, int countProduct) {
         add(name, price, 1, 1);
     }
 
-    public void add(String name, int price, int count, double weight) {
+    public void add(String name, int price, int countProduct, double weight) {
         boolean error = false;
         if (contains(name)) {
             error = true;
         }
 
-        if (totalPrice + count * price >= limit) {
+        if (totalPrice + countProduct * price >= limit) {
             error = true;
         }
 
         if (error) {
-            System.out.println("Error occured :(");
+            System.out.println("Превышен лимит :(");
             return;
         }
 
-        items = items + "\n" + name + " - " + count + " шт. - "
+        items = items + "\n" + name + " - " + countProduct + " шт. - "
                 + price + " - " + weight + " Грамм ";
-        totalPrice = totalPrice + count * price;
+        totalPrice = totalPrice + countProduct * price;
         totalWeight = totalWeight + weight;
-        allGoods = allGoods * count;
+        allGoods = allGoods * countProduct;
+     //   allPrice = totalPrice * count;
 
     }
 
