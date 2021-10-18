@@ -11,5 +11,6 @@ public class Main {
         Cargo cargo = new Cargo(dimensions2, 10, "Address", true, "AA001", false);
         Cargo cargo1 = cargo.setWeight(30).setDeliveryAddress("Another address");
         System.out.println(cargo1);
+
     }
 }
