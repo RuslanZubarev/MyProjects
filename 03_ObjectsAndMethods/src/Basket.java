@@ -11,9 +11,9 @@ public class Basket {
 
     public Basket() {
         increaseCount(1);
-        increaseAllGoods(1);
-       // increaseAllPrice(1);
-        increaseCountProduct(1);
+        //  increaseAllGoods(1);
+        // increaseAllPrice(1);
+        //  increaseCountProduct(1);
         items = "Список товаров:";
         this.limit = 10000;
         this.totalWeight = 0.0;
@@ -25,9 +25,13 @@ public class Basket {
     }
 
     public Basket(String items, int limit) {
+
         this();
         this.items = this.items + items;
         this.limit = limit;
+        // increaseAllPrice(1);
+        // increaseCountProduct(1);
+        // increaseAllGoods(1);
     }
 
     public static int getCount() {
@@ -46,10 +50,13 @@ public class Basket {
         return countProduct;
     }
 
-    public static void increaseCountProduct(int countProduct) {
-        Basket.countProduct = Basket.count + Basket.countProduct;
+    public static int getAvaregePrice() {
+        return allPrice / count;
     }
 
+    public static void increaseCountProduct(int countProduct) {
+        Basket.countProduct = Basket.countProduct + countProduct;
+    }
 
     public static void increaseCount(int count) {
         Basket.count = Basket.count + count;
@@ -65,6 +72,9 @@ public class Basket {
 
     public void add(String name, int price) {
         add(name, price, 1);
+        //    increaseAllPrice(1);
+        //   increaseCountProduct(1);
+
     }
 
     public void add(String name, int price, int countProduct) {
@@ -85,13 +95,12 @@ public class Basket {
             System.out.println("Превышен лимит :(");
             return;
         }
-
         items = items + "\n" + name + " - " + countProduct + " шт. - "
                 + price + " - " + weight + " Грамм ";
         totalPrice = totalPrice + countProduct * price;
         totalWeight = totalWeight + weight;
-        allGoods = allGoods * countProduct;
-        allPrice = allPrice + totalPrice * count;
+        allGoods = allGoods + countProduct;
+        allPrice = allPrice + totalPrice * countProduct;
 
     }
 
