@@ -8,10 +8,15 @@ public class Main {
         basket2.add("Juice", 30, 1);
         basket2.add("water", 20, 2);
         basket2.add("Bread", 30, 1);
+        Basket basket3 = new Basket("Товары3", 500);
+        basket3.add("carrot", 10, 1);
 
         System.out.println("Количество корзин: " + Basket.getCount());
         System.out.println("Общеe количествo всех товаров во всех корзинах: " + Basket.getAllGoods());
         System.out.println("Oбщая стоимость всех товаров во всех корзинaх: " + Basket.getAllPrice());
-        System.out.println("Средняя цена: " + Basket.getAvaregePrice());
+        System.out.println("Средняя цена корзины: " + Basket.getAvaregeBasketPrice());
+        System.out.println("Средняя цена товара во всех корзинах: " + Basket.getAvaregeCountPrice());
+        System.out.println("Количество продуктов во второй корзине: " + basket2.getCountProduct());
+        System.out.println("Цена корзины 2: " + basket2.getTotalPrice());
     }
 }

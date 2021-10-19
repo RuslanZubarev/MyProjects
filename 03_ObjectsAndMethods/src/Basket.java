@@ -1,22 +1,20 @@
 public class Basket {
-    private double totalWeight = 0;
+    private double totalWeight = 0.0;
     private String items = "";
     private int totalPrice = 0; // цена всех товаров в одной корзине.
     private int limit;
 
     private static int count = 0; // общее количество корзин.
-    public static int allGoods = 0; // общеe количествo всех товаров во всех корзинах.
-    public static int allPrice = 0; // общая стоимость всех товаров во всех корзинaх.
-    public static int countProduct = 0; // количество товаров в одной корзине.
+    private static int allGoods = 0; // общеe количествo всех товаров во всех корзинах.
+    private static int allPrice = 0; // общая стоимость всех товаров во всех корзинaх.
+    private static int countProduct = 0; // количество товаров в одной корзине.
 
     public Basket() {
         increaseCount(1);
-        //  increaseAllGoods(1);
-        // increaseAllPrice(1);
-        //  increaseCountProduct(1);
         items = "Список товаров:";
         this.limit = 10000;
         this.totalWeight = 0.0;
+
     }
 
     public Basket(int limit) {
@@ -25,13 +23,12 @@ public class Basket {
     }
 
     public Basket(String items, int limit) {
-
         this();
         this.items = this.items + items;
         this.limit = limit;
-        // increaseAllPrice(1);
-        // increaseCountProduct(1);
-        // increaseAllGoods(1);
+        increaseAllPrice(1);
+        increaseAllGoods(1);
+        increaseCountProduct(1);
     }
 
     public static int getCount() {
@@ -50,8 +47,12 @@ public class Basket {
         return countProduct;
     }
 
-    public static int getAvaregePrice() {
+    public static int getAvaregeBasketPrice() {
         return allPrice / count;
+    }
+
+    public static int getAvaregeCountPrice() {
+        return allPrice / allGoods;
     }
 
     public static void increaseCountProduct(int countProduct) {
@@ -72,9 +73,6 @@ public class Basket {
 
     public void add(String name, int price) {
         add(name, price, 1);
-        //    increaseAllPrice(1);
-        //   increaseCountProduct(1);
-
     }
 
     public void add(String name, int price, int countProduct) {
@@ -101,7 +99,6 @@ public class Basket {
         totalWeight = totalWeight + weight;
         allGoods = allGoods + countProduct;
         allPrice = allPrice + totalPrice * countProduct;
-
     }
 
     public void clear() {
