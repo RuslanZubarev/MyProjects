@@ -27,7 +27,6 @@ public class Basket {
         this.items = this.items + items;
         this.limit = limit;
         increaseAllGoods(countProduct);
-       increaseAllPrice(totalPrice);
     }
 
     public static int getCount() {
@@ -43,11 +42,11 @@ public class Basket {
     }
 
 
-    public static int getAvaregeBasketPrice() {
+    public static int getAverageBasketPrice() {
         return allPrice / count;
     }
 
-    public static int getAvaregeCountPrice() {
+    public static int getAverageCountPrice() {
         return allPrice / allGoods;
     }
 
@@ -70,6 +69,7 @@ public class Basket {
 
     public void add(String name, int price, int countProduct) {
         add(name, price, 1, 1);
+        allGoods = allGoods + countProduct;
     }
 
     public void add(String name, int price, int countProduct, double weight) {
@@ -88,9 +88,8 @@ public class Basket {
         }
         items = items + "\n" + name + " - " + countProduct + " шт. - "
                 + price + " - " + weight + " Грамм ";
-        totalPrice = totalPrice + countProduct * price;
+        totalPrice = totalPrice + price * countProduct;
         totalWeight = totalWeight + weight;
-        allGoods = allGoods + countProduct;
         allPrice = allPrice + totalPrice * countProduct;
         this.countProduct = this.countProduct + countProduct;
     }
