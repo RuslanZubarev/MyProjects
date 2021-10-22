@@ -87,7 +87,7 @@ public class Basket {
         totalPrice = totalPrice + price * countProduct;
         totalWeight = totalWeight + weight;
         this.countProduct = this.countProduct + countProduct;
-        increaseAllPrice(totalPrice);
+        increaseAllPrice(price * countProduct); //!!!!
         increaseAllGoods(countProduct);
     }
 
