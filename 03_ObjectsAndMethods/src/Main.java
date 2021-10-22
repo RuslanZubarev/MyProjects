@@ -1,5 +1,4 @@
 public class Main {
-
     public static void main(String[] args) {
         Basket basket1 = new Basket("Товары", 1000);
         basket1.add("Beer", 50, 2);
