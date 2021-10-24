@@ -39,24 +39,24 @@ public class Basket {
     }
 
 
-    public static int getAverageBasketPrice() {
+    public static double getAverageBasketPrice() {
         return allPrice / count;
     }
 
-    public static int getAverageCountPrice() {
+    public static double getAverageCountPrice() {
         return allPrice / allGoods;
     }
 
 
-    public static void increaseCount(int count) {
+    private static void increaseCount(int count) {
         Basket.count = Basket.count + count;
     }
 
-    public static void increaseAllGoods(int allGoods) {
+    private static void increaseAllGoods(int allGoods) {
         Basket.allGoods = Basket.allGoods + allGoods;
     }
 
-    public static void increaseAllPrice(int allPrice) {
+    private static void increaseAllPrice(int allPrice) {
         Basket.allPrice = Basket.allPrice + allPrice;
     }
 
