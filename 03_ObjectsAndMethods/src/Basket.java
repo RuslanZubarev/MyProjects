@@ -3,6 +3,7 @@ public class Basket {
     private String items = "";
     private int totalPrice = 0; // цена всех товаров в одной корзине.
     private int limit;
+    private int basketPrice;
     private int countProduct = 0; // количество товаров в одной корзине.
     private static int count = 0; // общее количество корзин.
     private static int allGoods = 0; // общеe количествo всех товаров во всех корзинах.
@@ -11,19 +12,20 @@ public class Basket {
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
+        this.basketPrice = 0;
         this.limit = 10000;
         this.totalWeight = 0.0;
     }
 
-    public Basket(int limit) {
+    public Basket(int basketPrice) {
         this();
-        this.limit = limit;
+        this.basketPrice = basketPrice;
     }
 
-    public Basket(String items, int limit) {
+    public Basket(String items, int basketPrice) {
         this();
         this.items = this.items + items;
-        this.limit = limit;
+        this.basketPrice = basketPrice;
     }
 
     public static int getCount() {
