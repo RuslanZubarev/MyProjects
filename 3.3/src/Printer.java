@@ -37,7 +37,6 @@ public class Printer {
         clear();
     }
 
-
     public int getPendingPagesCount() {
         return pendingPagesCount;
 
