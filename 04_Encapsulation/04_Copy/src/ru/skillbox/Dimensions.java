@@ -2,12 +2,12 @@ package ru.skillbox;
 
 public class Dimensions {
     private final int width;
-    private final int hight;
+    private final int height;
     private final int length;
 
-    public Dimensions(int width, int hight, int length) {
+    public Dimensions(int width, int height, int length) {
         this.width = width;
-        this.hight = hight;
+        this.height = height;
         this.length = length;
     }
 
@@ -16,15 +16,15 @@ public class Dimensions {
     }
 
     public Dimensions setWidth(int width) {
-        return new Dimensions(width, hight, length);
+        return new Dimensions(width, height, length);
     }
 
-    public int getHight(int i) {
-        return hight;
+    public int getHeight(int i) {
+        return height;
     }
 
-    public Dimensions setHight(int hight) {
-        return new Dimensions(width, hight, length);
+    public Dimensions setHeight(int height) {
+        return new Dimensions(width, height, length);
     }
 
     public int getLength() {
@@ -32,17 +32,17 @@ public class Dimensions {
     }
 
     public Dimensions setLenght(int length) {
-        return new Dimensions(width, hight, length);
+        return new Dimensions(width, height, length);
     }
 
 
     public int calculateVolume() {
-        return  width * hight * length;
+        return  width * height * length;
     }
 
     public String toString() {
         return "Ширина:" + width + "\n" +
-                "Высота:" + hight + "\n" +
+                "Высота:" + height + "\n" +
                 "Длинна:" + length;
     }
 }
