@@ -9,7 +9,6 @@ public class Elevator {
     public Elevator(int minFloor, int maxFloor) {
         this.minFloor = minFloor;
         this.maxFloor = maxFloor;
-        this.currentFloor = currentFloor;
     }
 
     public int getCurrentFloor() {
@@ -17,11 +16,11 @@ public class Elevator {
     }
 
     public void moveDown() {
-        currentFloor = currentFloor >= minFloor ? currentFloor - 1 : currentFloor;
+        currentFloor = currentFloor > minFloor ? currentFloor - 1 : currentFloor;
     }
 
     public void moveUp() {
-        currentFloor = currentFloor <= maxFloor ? currentFloor + 1 : currentFloor;
+        currentFloor = currentFloor < maxFloor ? currentFloor + 1 : currentFloor;
 
     }
 
@@ -40,7 +39,7 @@ public class Elevator {
                 moveDown();
             }
             // Если текущий этаж ниже заданного - ехать вверх (moveUp)
-            else if (currentFloor < floor) {
+            else {
                 moveUp();
             }
             // Вывести текущий этаж на консоль
