@@ -1,16 +1,14 @@
 public class ArithmeticCalculator {
-    public static final int NUMBER_A = 5;
-    public static final int NUMBER_B = 4;
+    public int number_a = 5;
+    public int number_b = 4;
 
 
-    public final Operation type;
-
-    public ArithmeticCalculator(Operation type){
-        this.type = type;
+    public ArithmeticCalculator(int number_a, int number_b) {
+        this.number_a = number_a;
+        this.number_b = number_b;
     }
 
-    public Operation getType(){
-        return type;
+    public void calculate(Operation operation) {
     }
 
 }
