@@ -1,14 +1,23 @@
 public class ArithmeticCalculator {
-    public int number_a = 5;
-    public int number_b = 4;
+    public int numberA = 5;
+    public int numberB = 4;
 
 
-    public ArithmeticCalculator(int number_a, int number_b) {
-        this.number_a = number_a;
-        this.number_b = number_b;
+    public ArithmeticCalculator(int numberA, int numberB) {
+        this.numberA = numberA;
+        this.numberB = numberB;
     }
 
-    public void calculate(Operation operation) {
+    public int calculate(Operation operation) {
+        if (operation == Operation.ADD) {
+            return numberA + numberB;
+        }
+        if (operation == Operation.SUBTRACT) {
+            return numberA - numberB;
+        }
+        if (operation == Operation.MULTIPLY) {
+            return numberA * numberB;
+        }
+        return 0;
     }
-
 }
