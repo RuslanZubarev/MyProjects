@@ -2,7 +2,6 @@ public class ArithmeticCalculator {
     private final int numberA;
     private final int numberB;
 
-
     public ArithmeticCalculator(int numberA, int numberB) {
         this.numberA = numberA;
         this.numberB = numberB;
