@@ -1,6 +1,6 @@
 public class ArithmeticCalculator {
-    public int numberA = 5;
-    public int numberB = 4;
+    private final int numberA;
+    private final int numberB;
 
 
     public ArithmeticCalculator(int numberA, int numberB) {
