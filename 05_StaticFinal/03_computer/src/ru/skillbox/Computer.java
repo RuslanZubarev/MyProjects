@@ -20,8 +20,9 @@ public class Computer {
         this.vendor = vendor;
         this.name = name;
     }
-public String toString(){
+
+    public String toString() {
         return "Производитель: " + vendor + "\n" + "Модель: " + name + "\n" + "Процессор: " + сpu + "\n" + "Оперативная память: " + ram + "\n" +
-                "Накопитель: " + storage + "\n" + "Экран: " + storage + "\n" + "Клавиатура: " + keyboard;
-}
+                "Накопитель: " + storage + "\n" + "Экран: " + screen + "\n" + "Клавиатура: " + keyboard;
+    }
 }

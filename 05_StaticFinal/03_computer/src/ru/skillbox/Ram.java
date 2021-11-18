@@ -10,4 +10,7 @@ public class Ram {
         this.size = size;
         this.weightOfRam = weightOfRam;
     }
+    public String toString() {
+        return "Тип: " + type + ". Объем: " + size + " Гб. Вес: " + weightOfRam + " грамм.";
+    }
 }

@@ -10,4 +10,8 @@ public class Keyboard {
         this.withLights = withLights;
         this.weightOfKeyboard = weightOfKeyboard;
     }
+
+    public String toString() {
+        return "Тип клавиатуры: " + typeOfKeyboard + ". Наличие подсветки: " + withLights + ". Вес клавиатуры: " + weightOfKeyboard + " грамм.";
+    }
 }
