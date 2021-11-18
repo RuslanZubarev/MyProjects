@@ -1,18 +1,18 @@
 package ru.skillbox;
 
 public class Computer {
-    private final String processor;
-    private final String ram;
-    private final String storage;
-    private final String screen;
-    private final String keyboard;
+    private final Сpu сpu;
+    private final Ram ram;
+    private final Storage storage;
+    private final Screen screen;
+    private final Keyboard keyboard;
 
     private final String vendor;
     private final String name;
 
 
-    public Computer(String processor, String ram, String storage, String screen, String keyboard, String vendor, String name) {
-        this.processor = processor;
+    public Computer(Сpu сpu, Ram ram, Storage storage, Screen screen, Keyboard keyboard, String vendor, String name) {
+        this.сpu = сpu;
         this.ram = ram;
         this.storage = storage;
         this.screen = screen;
@@ -20,26 +20,8 @@ public class Computer {
         this.vendor = vendor;
         this.name = name;
     }
-
-    public String getProcessor() {
-        return processor;
-    }
-
-    public String getRam() {
-        return ram;
-    }
-
-    public String getStorage() {
-        return storage;
-    }
-
-    public String getScreen() {
-        return screen;
-    }
-
-    public String getKeyboard() {
-        return keyboard;
-    }
-
-
+public String toString(){
+        return "Производитель: " + vendor + "\n" + "Модель: " + name + "\n" + "Процессор: " + сpu + "\n" + "Оперативная память: " + ram + "\n" +
+                "Накопитель: " + storage + "\n" + "Экран: " + storage + "\n" + "Клавиатура: " + keyboard;
+}
 }
