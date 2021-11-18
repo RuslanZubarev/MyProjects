@@ -1,7 +1,7 @@
 package ru.skillbox;
 
 public class Computer {
-    private final Сpu сpu;
+    private final Cpu сpu;
     private final Ram ram;
     private final Storage storage;
     private final Screen screen;
@@ -10,8 +10,7 @@ public class Computer {
     private final String vendor;
     private final String name;
 
-
-    public Computer(Сpu сpu, Ram ram, Storage storage, Screen screen, Keyboard keyboard, String vendor, String name) {
+    public Computer(Cpu сpu, Ram ram, Storage storage, Screen screen, Keyboard keyboard, String vendor, String name) {
         this.сpu = сpu;
         this.ram = ram;
         this.storage = storage;
@@ -19,6 +18,46 @@ public class Computer {
         this.keyboard = keyboard;
         this.vendor = vendor;
         this.name = name;
+    }
+
+    public Cpu getСpu() {
+        return сpu;
+    }
+
+    public Ram getRam() {
+        return ram;
+    }
+
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public Keyboard getKeyboard() {
+        return keyboard;
+    }
+
+    public Computer setCpu(Cpu cpu) {
+        return new Computer(cpu, ram, storage, screen, keyboard, vendor, name);
+    }
+
+    public Computer setRam(Ram ram) {
+        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    }
+
+    public Computer setStorage(Storage storage) {
+        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    }
+
+    public Computer setScreen(Screen screen) {
+        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    }
+
+    public Computer setKeyboard(Keyboard keyboard) {
+        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
     }
 
     public String toString() {
