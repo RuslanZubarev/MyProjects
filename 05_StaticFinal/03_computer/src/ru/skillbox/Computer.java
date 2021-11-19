@@ -9,6 +9,7 @@ public class Computer {
 
     private final String vendor;
     private final String name;
+    private final double costOfSet = 2000;
 
     public Computer(Cpu сpu, Ram ram, Storage storage, Screen screen, Keyboard keyboard, String vendor, String name) {
         this.сpu = сpu;
@@ -72,6 +73,9 @@ public class Computer {
         return сpu.getWeight() + ram.getWeight() + storage.getWeight() + screen.getWeight() + keyboard.getWeight();
     }
 
+    public double getCostOfSet() {
+        return costOfSet + сpu.getCost() + ram.getCost() + storage.getCost() + screen.getCost() + keyboard.getCost();
+    }
 
     public String toString() {
         return "Производитель: " + vendor + "\n" + "Модель: " + name + "\n" + "Процессор: " + сpu + "\n" + "Оперативная память: " + ram + "\n" +
