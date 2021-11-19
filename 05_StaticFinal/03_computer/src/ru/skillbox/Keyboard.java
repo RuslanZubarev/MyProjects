@@ -11,6 +11,10 @@ public class Keyboard {
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     public String toString() {
         return "Тип клавиатуры: " + typeOfKeyboard + ". Наличие подсветки: " + withLights + ". Вес клавиатуры: " + weight + " грамм.";
     }

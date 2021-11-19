@@ -10,6 +10,11 @@ public class Storage {
         this.weight = weight;
         this.storageType = type;
     }
+
+    public double getWeight() {
+        return weight;
+    }
+
     public String toString() {
         return "Тип накопителя: " + storageType + ". Объем памяти: " + space + " Гб. Вес: " + weight + " грамм.";
     }

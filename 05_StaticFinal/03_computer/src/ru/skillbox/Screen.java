@@ -11,7 +11,11 @@ public class Screen {
         this.type = type;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     public String toString() {
-        return "Диагональ: " + sizeOfScreen + " дюймов. Тип матрицы: " + type + ". Вес монитора" + weight + " грамм.";
+        return "Диагональ: " + sizeOfScreen + " дюймов. Тип матрицы: " + type + ". Вес монитора: " + weight + " грамм.";
     }
 }

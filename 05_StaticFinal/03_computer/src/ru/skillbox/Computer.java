@@ -1,11 +1,11 @@
 package ru.skillbox;
 
 public class Computer {
-    private final Cpu сpu;
-    private final Ram ram;
-    private final Storage storage;
-    private final Screen screen;
-    private final Keyboard keyboard;
+    private Cpu сpu;
+    private Ram ram;
+    private Storage storage;
+    private Screen screen;
+    private Keyboard keyboard;
 
     private final String vendor;
     private final String name;
@@ -24,41 +24,54 @@ public class Computer {
         return сpu;
     }
 
+    public void setСpu(Cpu сpu) {
+        this.сpu = сpu;
+    }
+
     public Ram getRam() {
         return ram;
+    }
+
+    public void setRam(Ram ram) {
+        this.ram = ram;
     }
 
     public Storage getStorage() {
         return storage;
     }
 
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+
     public Screen getScreen() {
         return screen;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
     }
 
     public Keyboard getKeyboard() {
         return keyboard;
     }
 
-    public Computer setCpu(Cpu cpu) {
-        return new Computer(cpu, ram, storage, screen, keyboard, vendor, name);
+    public void setKeyboard(Keyboard keyboard) {
+        this.keyboard = keyboard;
     }
 
-    public Computer setRam(Ram ram) {
-        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    public String getVendor() {
+        return vendor;
     }
 
-    public Computer setStorage(Storage storage) {
-        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    public String getName() {
+        return name;
     }
 
-    public Computer setScreen(Screen screen) {
-        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
+    public double getWeight() {
+        return сpu.getWeight() + ram.getWeight() + storage.getWeight() + screen.getWeight() + keyboard.getWeight();
     }
 
-    public Computer setKeyboard(Keyboard keyboard) {
-        return new Computer(сpu, ram, storage, screen, keyboard, vendor, name);
-    }
 
     public String toString() {
         return "Производитель: " + vendor + "\n" + "Модель: " + name + "\n" + "Процессор: " + сpu + "\n" + "Оперативная память: " + ram + "\n" +

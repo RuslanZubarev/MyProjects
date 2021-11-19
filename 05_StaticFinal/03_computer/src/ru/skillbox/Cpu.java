@@ -13,6 +13,10 @@ public class Cpu {
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
     public String toString() {
         return "Тактовая частота: " + cpuFrequency + " Гц. Количество ядер: " + numberOfCores + ". Производитель процессора: "
                 + cpuVendor + ". Вес процессора: " + weight + " грамм.";
