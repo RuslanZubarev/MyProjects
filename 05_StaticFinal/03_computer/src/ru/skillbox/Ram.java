@@ -1,12 +1,12 @@
 package ru.skillbox;
 
 public class Ram {
-    private final String type;
-    private final int size;
+    private final RamType type;
+    private final RamSize size;
     private final double weight;
     private final int cost;
 
-    public Ram(String type, int size, double weight, int cost) {
+    public Ram(RamType type, RamSize size, double weight, int cost) {
         this.type = type;
         this.size = size;
         this.weight = weight;
