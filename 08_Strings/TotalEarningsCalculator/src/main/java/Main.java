@@ -13,7 +13,7 @@ public class Main {
             char str = string.charAt(i);
             if (Character.isDigit(str)) {
                 result.append(str);
-            } else if (!result.toString().equals("")) {
+            } else if (!result.toString().isEmpty()) {
                 count += Integer.parseInt(result.toString());
                 result = new StringBuilder();
             }
