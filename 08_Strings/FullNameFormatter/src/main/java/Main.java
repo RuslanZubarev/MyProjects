@@ -16,12 +16,16 @@ public class Main {
             for (; i < input.length(); i++) {
                 char str = input.charAt(i);
 
-                if (Character.isWhitespace(str) || (!Character.UnicodeBlock.of(str).equals(Character.UnicodeBlock.CYRILLIC)) && input.charAt(i) != '-') {
+                if (Character.isWhitespace(str)) {
                     spaceCount++;
+                    continue;
+                }
+
+                if ((str != ' ') && (str != '-') && (!Character.UnicodeBlock.of(str).equals(Character.UnicodeBlock.CYRILLIC))) {
+                    break;
                 }
             }
-
-            if ((spaceCount != 2) || (input.isBlank() || Character.isDigit(i))) {
+            if (spaceCount != 2) {
                 System.out.println("Введенная строка не является ФИО");
             } else {
                 String lastName = input.substring(0, start).trim();
@@ -32,9 +36,7 @@ public class Main {
 
                 String templay = "Фамилия: %s%nИмя: %s%nОтчество: %s%n";
                 System.out.printf(templay, lastName, firstName, patronymic);
-
             }
-
         }
     }
 }
