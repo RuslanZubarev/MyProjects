@@ -12,7 +12,7 @@ public class Main {
     }
 
     public static int calculateSalarySum(String text) {
-        String regex = "[0-9]*";
+        String regex = "[0-9]+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         int sum = 0;
