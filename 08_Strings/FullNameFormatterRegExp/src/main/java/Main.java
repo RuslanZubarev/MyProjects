@@ -13,9 +13,11 @@ public class Main {
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(input);
             if (matcher.find()) {
-                System.out.println("Фамилия: " + matcher.group(1));
-                System.out.println("Имя: " + matcher.group(3));
-                System.out.println("Отчество: " + matcher.group(4));
+                System.out.println("Фамилия: " + matcher.group(1) + "\r\n"
+                        + "Имя: " + matcher.group(3) + "\r\n" +
+                        "Отчество: " + matcher.group(4));
+
+
             } else {
                 System.out.println("Введенная строка не является ФИО");
                 break;
