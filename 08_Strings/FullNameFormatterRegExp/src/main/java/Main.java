@@ -7,23 +7,22 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            String input = scanner.nextLine();
-            String regex = "^([А-Я]{1}[а-яё]+(-[А-Я]{1}[а-яё]+)?)\\s([А-Я]{1}[а-яё]+)\\s([А-Я]{1}[а-яё]+)$";
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(input);
-            if (matcher.find()) {
-                System.out.println("Фамилия: " + matcher.group(1) + "\r\n"
-                        + "Имя: " + matcher.group(3) + "\r\n" +
-                        "Отчество: " + matcher.group(4));
+
+        String input = scanner.nextLine();
+        String regex = "^([А-Я][а-яё]+(-[А-Я][а-яё]+)?)\\s([А-Я][а-яё]+)\\s([А-Я][а-яё]+)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            System.out.println("Фамилия: " + matcher.group(1) + "\r\n"
+                    + "Имя: " + matcher.group(3) + "\r\n" +
+                    "Отчество: " + matcher.group(4));
 
 
-            } else {
-                System.out.println("Введенная строка не является ФИО");
-                break;
-            }
-
+        } else {
+            System.out.println("Введенная строка не является ФИО");
         }
+
+
     }
 
 }
