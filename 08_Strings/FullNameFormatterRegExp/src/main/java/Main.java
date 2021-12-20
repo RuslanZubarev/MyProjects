@@ -17,7 +17,6 @@ public class Main {
                     + "Имя: " + matcher.group(3) + "\r\n" +
                     "Отчество: " + matcher.group(4));
 
-
         } else {
             System.out.println("Введенная строка не является ФИО");
         }
