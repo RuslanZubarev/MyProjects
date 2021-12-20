@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static String splitTextIntoWords(String text) {
-        String regex = "[^a-zA-Z'’]+"; // создаем шаблон.
+        String regex = "[^A-z’]+"; // создаем шаблон.
         return text.replaceAll(regex, System.lineSeparator()).trim(); //применяем шаблон в первом параметре и вместо указанных в нем значений(. , ; : ' ' '\n') используем перенос строки, а так же убираем пробелы перед и после слова.
     }
 }
