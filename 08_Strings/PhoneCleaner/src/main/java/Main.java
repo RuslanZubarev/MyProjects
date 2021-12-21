@@ -1,3 +1,5 @@
+import net.sf.saxon.expr.Component;
+
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,27 +10,28 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         System.out.println(formatPhoneNumber(input));
-//    while (true) {
-//      String input = scanner.nextLine();
-//      String regex = "[^0-9]";
-//      if (input.equals("0")) {
-//        break;
-//      }
-
-//    }
     }
 
     public static String formatPhoneNumber(String input) {
-        String regex = "[^0-9]"; //создаем регулярку, которая будет отсеивать все НЕ цифры
-        String secondRegex = "[0-9]{10,11}"; // регулярка проверяет количество цифр, оно должно быть 10 или 11
-        Pattern pattern = Pattern.compile(regex);
+        String clearRegex = "[^0-9]"; //создаем регулярку, которая будет отсеивать все НЕ цифры
+        String secondRegex = "[7,8]?9[0-9]{9}"; // регулярка проверяет количество цифр, оно должно быть 10 или 11
+        Pattern pattern = Pattern.compile(clearRegex);
         Matcher matcher = pattern.matcher(input);
-        Pattern secondPattern = Pattern.compile(secondRegex);
-        Matcher secondMatcher = pattern.matcher(input);
-        if (!matcher.matches()) {
-            System.out.println("Неверный формат номера");
-        }
-        return input.replaceAll(regex, ""); // удаляем НЕ символы найденые регуляркой
-    }
 
+        String clearNumber = input.replaceAll(clearRegex, "");
+        Pattern secondPattern = Pattern.compile(secondRegex);
+        Matcher secondMatcher = pattern.matcher(clearNumber);
+
+        if (!input.equals(clearNumber)) {
+            return clearNumber;
+        }
+        if (input.startsWith("8")) {
+          return input.replace('8', '7');
+        }
+        if (input.startsWith("9")) {
+            return "7".concat(input);
+        }
+
+        return "";
+    }
 }
