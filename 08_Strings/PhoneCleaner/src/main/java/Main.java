@@ -18,18 +18,14 @@ public class Main {
         Pattern pattern = Pattern.compile(clearRegex);
         Matcher matcher = pattern.matcher(input);
 
-        String clearNumber = input.replaceAll(clearRegex, "");
+        String cleanNumber = input.replaceAll(clearRegex, "");
         Pattern secondPattern = Pattern.compile(secondRegex);
-        Matcher secondMatcher = pattern.matcher(clearNumber);
+        Matcher secondMatcher = pattern.matcher(cleanNumber);
 
-        if (!input.equals(clearNumber)) {
-            return clearNumber;
-        }
-        if (input.startsWith("8")) {
-          return input.replace('8', '7');
-        }
-        if (input.startsWith("9")) {
-            return "7".concat(input);
+        if (cleanNumber.matches(secondRegex)) {
+            System.out.println("7".concat(cleanNumber.length() == 10 ? cleanNumber : cleanNumber.substring(1)));
+        } else {
+            System.out.println("Неверный формат номера");
         }
 
         return "";
